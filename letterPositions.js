@@ -36,8 +36,18 @@ const expected = {
   n: [12]
 };
 
-console.log(letterPositions("lighthouse in the house"));
+const results = letterPositions("lighthouse in the house");
 
+console.log(results;
 console.log(expected);
+
+testBoolean = true;
+for (const letter in results){
+  if (results.letter === expected.letter){
+    testBoolean = false;
+  }
+};
+
+console.log(assertEqual(testBoolean, true));
 
 */
