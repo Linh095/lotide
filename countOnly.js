@@ -16,8 +16,9 @@ const countOnly = function(allItems, itemsToCount) {
       for(const item of allItems) {
         if (item === itemToCount) {
           counter++;
-        }
+        } 
       }
+      if (counter === 0) {counter = undefined};
       //assign item name and number of time it occurs to result
       results[itemToCount] = counter;
     }
