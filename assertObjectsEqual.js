@@ -1,11 +1,3 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    return console.log(`✔️✔️✔️ Assertion Passed: ${actual} === ${expected}`);
-  } else  {
-    return console.log(`❌️❌️❌️ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
@@ -42,17 +34,15 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
+const assertObjectsEqual = function(object1, object2) {
+  let isSameBoolean = eqObjects(object1,object2);
+  if (isSameBoolean ? console.log(`✔️✔️✔️ Assertion Passed: ${object1} === ${object2}`) : console.log(`❌️❌️❌️ Assertion Failed: ${object1} !== ${object2}`));
+};
+
 //TEST CODE
-//const ab = { a: "1", b: "2" };
-//const ba = { b: "2", a: "1" };
-/*
-const ab = { a: [1,2], b: [2,2] };
-const ba = { b: [2,2], a: [1,2] };
+// const ab = { a: [1,2], b: [2,2] };
+// const ba = { b: [2,2], a: [1,2] };
+// assertObjectsEqual(ab,ba);
 
-console.log(assertEqual(eqObjects(ab, ba), true));
-
-// const abc = { a: "1", b: "2", c: "3" };
-const abc = { a: "1", b: "2"};
-
-console.log(assertEqual(eqObjects(ab, abc),false));
-*/
+// const abc = { a: "1", b: "2"};
+// assertObjectsEqual(ab, abc);
