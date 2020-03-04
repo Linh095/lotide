@@ -13,7 +13,7 @@ const eqArrays = function(array1, array2) {
 };
 
 //main function
-const assertArrayEqual = function(array1, array2) {
+const assertArraysEqual = function(array1, array2) {
   let isSameBoolean = eqArrays(array1,array2);
   if (isSameBoolean ? console.log(`✔️✔️✔️ Assertion Passed: ${array1} === ${array2}`) : console.log(`❌️❌️❌️ Assertion Failed: d: ${array1} !== ${array2}`));
 };
@@ -32,9 +32,9 @@ const middle = function(array) {
 };
 
 //TEST CODE
-assertArrayEqual(middle([1]),[]); // => []
-assertArrayEqual(middle([1, 2]), []); // => []
-assertArrayEqual(middle([1, 2, 3]), [2]); // => [2]
-assertArrayEqual(middle([1, 2, 3, 4, 5]), [3]); // => [3]
-assertArrayEqual(middle([1, 2, 3, 4]),[2,3]); // => [2, 3]
-assertArrayEqual(middle([1, 2, 3, 4, 5, 6]), [3,4]); // => [3, 4]
+assertArraysEqual(middle([1]),[]); // => []
+assertArraysEqual(middle([1, 2]), []); // => []
+assertArraysEqual(middle([1, 2, 3]), [2]); // => [2]
+assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]); // => [3]
+assertArraysEqual(middle([1, 2, 3, 4]),[2,3]); // => [2, 3]
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3,4]); // => [3, 4]
