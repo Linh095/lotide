@@ -7,7 +7,8 @@ const assertEqual = function(actual, expected) {
 };
 
 const countLetters = function(str) {
-  const string = str.toLowerCase();
+  let string = str.toLowerCase();
+  string = string.replace(/\s/g,"");
   let lettersCounted = {};
   for (const letter of string) {
     if (lettersCounted[letter] === undefined) {
