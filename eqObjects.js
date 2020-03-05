@@ -53,6 +53,5 @@ console.log(assertEqual(eqObjects(ab, ba), true));
 
 // const abc = { a: "1", b: "2", c: "3" };
 const abc = { a: "1", b: "2"};
-
 console.log(assertEqual(eqObjects(ab, abc),false));
 */
