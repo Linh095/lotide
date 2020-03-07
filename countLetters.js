@@ -16,5 +16,6 @@ const countLetters = function(str) {
 };
 
 module.exports = countLetters;
+
 //TEST CODE
 //console.log(countLetters("Lighthouse Lab"));
