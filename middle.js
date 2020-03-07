@@ -1,22 +1,5 @@
-//function import to test middle function
-const eqArrays = function(array1, array2) {
-  if (array1.length !== array2.length) {
-    return false;
-  } else {
-    for (let x = 0; x < array1.length; x++) {
-      if (array1[x] !== array2[x]) {
-        return false;
-      }
-    }
-    return true;
-  }
-};
-
 //main function
-const assertArraysEqual = function(array1, array2) {
-  let isSameBoolean = eqArrays(array1,array2);
-  if (isSameBoolean ? console.log(`✔️✔️✔️ Assertion Passed: ${array1} === ${array2}`) : console.log(`❌️❌️❌️ Assertion Failed: ${array1} !== ${array2}`));
-};
+const assertArraysEqual = require('./assertEqual');
 
 const middle = function(array) {
   let middle = [];
@@ -30,6 +13,8 @@ const middle = function(array) {
     return middle;
   }
 };
+
+module.exports = middle;
 
 //TEST CODE
 /*

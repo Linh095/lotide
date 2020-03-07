@@ -1,10 +1,4 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    return console.log(`✔️✔️✔️ Assertion Passed: ${actual} === ${expected}`);
-  } else  {
-    return console.log(`❌️❌️❌️ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 
 const countLetters = function(str) {
   let string = str.toLowerCase();
@@ -21,5 +15,6 @@ const countLetters = function(str) {
   return lettersCounted;
 };
 
+module.exports = countLetters;
 //TEST CODE
 //console.log(countLetters("Lighthouse Lab"));

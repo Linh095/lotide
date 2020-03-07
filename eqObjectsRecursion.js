@@ -1,18 +1,7 @@
-const eqArrays = function(array1, array2) {
-  if (array1.length !== array2.length) {
-    return false;
-  } else {
-    for (let x = 0; x < array1.length; x++) {
-      if (array1[x] !== array2[x]) {
-        return false;
-      }
-    }
-    return true;
-  }
-};
+const eqArrays = require('./eqArrays');
 
 //MAIN FUNCTION
-const eqObjects = function(thing1, thing2) {
+const eqObjectsRecursion = function(thing1, thing2) {
 
   if (typeof thing1 !== typeof thing2) {
     return false;
@@ -31,7 +20,7 @@ const eqObjects = function(thing1, thing2) {
     }
   } else {
     for (const key in thing1) {
-      if (!eqObjects(thing1[key], thing2[key])) {
+      if (!eqObjectsRecursion(thing1[key], thing2[key])) {
         return false;
       }
     }
@@ -39,10 +28,10 @@ const eqObjects = function(thing1, thing2) {
   return true;
 }
   
-
-// console.log(eqObjects(null,[null]));
+module.exports = eqObjectsRecursion;
 
 //TEST CODE
+// console.log(eqObjects(null,[null]));
 // console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => true
 
 // console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => false
