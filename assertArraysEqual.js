@@ -1,16 +1,21 @@
 const eqArrays = require('./eqArrays');
 
 const assertArraysEqual = function(array1, array2) {
-  let isSameBoolean = eqArrays(array1,array2);
-  if (isSameBoolean ? console.log(`✔️✔️✔️ Assertion Passed: ${array1} === ${array2}`) : console.log(`❌️❌️❌️ Assertion Failed: ${array1} !== ${array2}`));
+  let stringToDisplay = "";
+  if(eqArrays(array1,array2)) {
+    stringToDisplay += "Arrays are equal"
+  } else {
+    stringToDisplay += "Arrays are not equal"
+
+  }
+ return stringToDisplay
 };
+
+
 
 module.exports = assertArraysEqual;
 
-/* TEST CODE
-assertArrayEqual([1, 2, 3], [1, 2, 3]); // => true
-assertArrayEqual([1, 2, 3], [3, 2, 1]); // => false
+// `✔️✔️✔️ Assertion Passed: ${array1} === ${array2}`
+//`❌️❌️❌️ Assertion Failed: ${array1} !== ${array2}`
 
-assertArrayEqual(["1", "2", "3"], ["1", "2", "3"]); // => true
-assertArrayEqual(["1", "2", "3"], ["1", "2", 3]); // => false
-*/
+console.log(assertArraysEqual([1, 2, 3], [1, 2, 3]));
